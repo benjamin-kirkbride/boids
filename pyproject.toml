@@ -1,0 +1,53 @@
+[project]
+name = "test"
+version = "0.0.1"
+description = "Boids of a feather."
+authors = [
+    {name = "Benjamin Kirkbride"},
+]
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.9"
+
+dependencies = [
+    "arcade>=2.6.16"
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=22.12.0",
+    "mypy>=0.991",
+    "flake8>=6.0.0"
+]
+
+[project.urls]
+repository = "https://github.com/benjamin-kirkbride/boids"
+
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 88
+target_version = ['py39']
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
